@@ -86,24 +86,3 @@ help:
 	@echo "        run             build and run the target"
 	@echo "        help            print this target"
 
-			
-.PHONY: create_images delete_images
-create_images: $(EXE)
-	./$(EXE) r && magick out.ppm mandelbrot_set_red.png
-	./$(EXE) g && magick out.ppm mandelbrot_set_green.png
-	./$(EXE) b && magick out.ppm mandelbrot_set_blue.png
-	./$(EXE) m && magick out.ppm mandelbrot_set_magenta.png
-	./$(EXE) y && magick out.ppm mandelbrot_set_yellow.png
-	./$(EXE) c && magick out.ppm mandelbrot_set_cyan.png
-	./$(EXE) w && magick out.ppm mandelbrot_set_white.png
-
-delete_images:
-	$(RM) mandelbrot_set_red.png
-	$(RM) mandelbrot_set_green.png
-	$(RM) mandelbrot_set_blue.png
-	$(RM) mandelbrot_set_magenta.png
-	$(RM) mandelbrot_set_yellow.png
-	$(RM) mandelbrot_set_cyan.png
-	$(RM) mandelbrot_set_white.png
-
-
